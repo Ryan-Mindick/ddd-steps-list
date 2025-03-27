@@ -48,7 +48,7 @@ export class DddStepsList extends DDDSuper(I18NMixin(LitElement)) {
       h3 span {
         font-size: var(--ddd-steps-list-label-font-size, var(--ddd-font-size-s));
       }
-      .circle {
+      circle {
         width: 200px;
         height: 200px;
         line-height: 200px;
@@ -56,11 +56,14 @@ export class DddStepsList extends DDDSuper(I18NMixin(LitElement)) {
         -moz-border-radius: 50%;
         -webkit-border-radius: 50%;
         text-align: center;
-        color: var(--ddd--theme-default-nittanyNavy);
+        color: white;
         font-size: 16px;
         text-transform: uppercase;
         font-weight: 700;
         margin: 0 auto 40px;
+      }
+      .circle-color {
+        background-color: var(--ddd--theme-default-navy60);
       }
     `];
   }
@@ -69,6 +72,7 @@ export class DddStepsList extends DDDSuper(I18NMixin(LitElement)) {
   render() {
     return html`
 <div class="wrapper">
+  <div class="circle">Circle</div>
   <h3><span>${this.t.title}:</span> ${this.title}</h3>
   <slot></slot>
 </div>`;
