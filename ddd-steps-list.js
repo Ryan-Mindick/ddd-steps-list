@@ -71,10 +71,11 @@ export class DddStepsList extends DDDSuper(I18NMixin(LitElement)) {
   // Lit render the HTML
   render() {
     return html`
-<div class="wrapper">
-  <div class="circle">Circle</div>
+  <div class="wrapper">
+  <div class="circle">
   <h3><span>${this.t.title}:</span> ${this.title}</h3>
   <slot></slot>
+</div>
 </div>`;
   }
 
