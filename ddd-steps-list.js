@@ -4,7 +4,7 @@
  */
 import { LitElement, html, css } from "lit";
 import { DDDSuper } from "@haxtheweb/d-d-d/d-d-d.js";
-import { I18NMixin } from "@haxtheweb/i18n-manager/lib/I18NMixin.js";
+import "./ddd-steps-list-items.js"
 
 /**
  * `ddd-steps-list`
@@ -21,18 +21,6 @@ export class DddStepsList extends DDDSuper(I18NMixin(LitElement)) {
   constructor() {
     super();
     this.title = "";
-    this.t = this.t || {};
-    this.t = {
-      ...this.t,
-      title: "Title",
-    };
-    this.registerLocalization({
-      context: this,
-      localesPath:
-        new URL("./locales/ddd-steps-list.ar.json", import.meta.url).href +
-        "/../",
-      locales: ["ar", "es", "hi", "zh"],
-    });
   }
 
   // Lit reactive properties
@@ -59,6 +47,20 @@ export class DddStepsList extends DDDSuper(I18NMixin(LitElement)) {
       }
       h3 span {
         font-size: var(--ddd-steps-list-label-font-size, var(--ddd-font-size-s));
+      }
+      .circle {
+        width: 200px;
+        height: 200px;
+        line-height: 200px;
+        border-radius: 50%; /* the magic */
+        -moz-border-radius: 50%;
+        -webkit-border-radius: 50%;
+        text-align: center;
+        color: var(--ddd--theme-default-nittanyNavy);
+        font-size: 16px;
+        text-transform: uppercase;
+        font-weight: 700;
+        margin: 0 auto 40px;
       }
     `];
   }

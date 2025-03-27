@@ -9,12 +9,12 @@ import { DDDSuper } from "@haxtheweb/d-d-d/d-d-d.js";
  * `ddd-steps-list`
  * 
  * @demo index.html
- * @element ddd-steps-list
+ * @element ddd-steps-list-items
  */
-export class DddStepsList extends DDDSuper(I18NMixin(LitElement)) {
+export class DddStepsListItems extends DDDSuper(I18NMixin(LitElement)) {
 
   static get tag() {
-    return "ddd-steps-list";
+    return "ddd-steps-list-items";
   }
 
   constructor() {
@@ -45,7 +45,7 @@ export class DddStepsList extends DDDSuper(I18NMixin(LitElement)) {
         padding: var(--ddd-spacing-4);
       }
       h3 span {
-        font-size: var(--ddd-steps-list-label-font-size, var(--ddd-font-size-s));
+        font-size: var(--ddd-steps-list-items-label-font-size, var(--ddd-font-size-s));
       }
     `];
   }
@@ -58,7 +58,7 @@ export class DddStepsList extends DDDSuper(I18NMixin(LitElement)) {
   <slot></slot>
 </div>`;
   }
-
+  
 }
 
-globalThis.customElements.define(DddStepsList.tag, DddStepsList);
+globalThis.customElements.define(DddStepsListItems.tag, DddStepsList);
