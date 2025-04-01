@@ -19,7 +19,7 @@ export class DddStepsListItems extends DDDSuper(I18NMixin(LitElement)) {
 
   constructor() {
     super();
-    this.title = "";
+    this.step = 0;
   }
 
   // Lit reactive properties
@@ -27,6 +27,7 @@ export class DddStepsListItems extends DDDSuper(I18NMixin(LitElement)) {
     return {
       ...super.properties,
       title: { type: String },
+      step: { type: Number, reflect: true }
     };
   }
 
@@ -36,8 +37,6 @@ export class DddStepsListItems extends DDDSuper(I18NMixin(LitElement)) {
     css`
       :host {
         display: block;
-        color: var(--ddd-theme-primary);
-        background-color: var(--ddd-theme-accent);
         font-family: var(--ddd-font-navigation);
       }
       .wrapper {
@@ -47,18 +46,32 @@ export class DddStepsListItems extends DDDSuper(I18NMixin(LitElement)) {
       h3 span {
         font-size: var(--ddd-steps-list-items-label-font-size, var(--ddd-font-size-s));
       }
+      circle {
+        width: 250px;
+        height: 250px;
+        line-height: 200px;
+        border-radius: 50%; 
+        display: flex;
+        text-align: center;
+        color: white;
+        font-size: 16px;
+        margin: 0 auto 40px;
+      }
+      .circle-color {
+        background-color: var(--ddd--theme-default-navy60);
+      }
     `];
   }
 
   // Lit render the HTML
   render() {
     return html`
-<div class="wrapper">
-  <h3><span>${this.t.title}:</span> ${this.title}</h3>
-  <slot></slot>
-</div>`;
+  <div class="wrapper">
+    <div class="circle">${this.step}  </div>
+    <h3><span>${this.t.title}:</span> ${this.title}</h3>
+    <slot></slot>
+  </div>`;
   }
-  
 }
 
 globalThis.customElements.define(DddStepsListItems.tag, DddStepsList);
