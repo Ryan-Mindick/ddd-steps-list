@@ -66,6 +66,10 @@ export class DddStepsListItems extends DDDSuper(I18NMixin(LitElement)) {
         flex: 1;
       }
 
+      h3 {
+        display: inline-block
+      }
+
       :host([data-primary]) .circle {
         background-color: var(--ddd-theme-default-navy60);
       }
