@@ -20,14 +20,14 @@ export class DddStepsListItems extends DDDSuper(I18NMixin(LitElement)) {
   constructor() {
     super();
     this.step = 0;
+    this.dddPrimary = false;
   }
 
   // Lit reactive properties
   static get properties() {
     return {
       ...super.properties,
-      title: { type: String },
-      step: { type: Number, reflect: true }
+      dddPrimary: { type: Boolean, attribute: 'ddd-primary', reflect: true}
     };
   }
 
