@@ -4,6 +4,7 @@
  */
 import { LitElement, html, css } from "lit";
 import { DDDSuper } from "@haxtheweb/d-d-d/d-d-d.js";
+import { I18NMixin } from "@haxtheweb/i18n-manager/lib/I18NMixin.js";
 import "./ddd-steps-list-items.js"
 
 /**
@@ -43,7 +44,10 @@ export class DddStepsList extends DDDSuper(I18NMixin(LitElement)) {
 
   // Lit render the HTML
   render() {
-    return html`<slot @slotchange="${this._onSlotChange}"></slot>
+    return html`
+    <div>
+      <slot @slotchange="${this._onSlotChange}"></slot>
+    </div>
     `;
   }
 
@@ -59,7 +63,7 @@ export class DddStepsList extends DDDSuper(I18NMixin(LitElement)) {
   let stepCount = 0;
     for (const child of this.children) {
       const tag = child.tagName.toLowerCase();
-      if (tag !== 'ddd-steps-list-item') {
+      if (tag !== 'ddd-steps-list-items'){
         this.removeChild(child);
       } else {
         stepCount++;

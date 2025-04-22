@@ -4,6 +4,8 @@
  */
 import { LitElement, html, css } from "lit";
 import { DDDSuper } from "@haxtheweb/d-d-d/d-d-d.js";
+import { I18NMixin } from "@haxtheweb/i18n-manager/lib/I18NMixin.js";
+
 
 /**
  * `ddd-steps-list`
@@ -50,16 +52,17 @@ export class DddStepsListItems extends DDDSuper(I18NMixin(LitElement)) {
       }
 
       .circle {
-        width: 250px;
-        height: 250px;
-        line-height: 200px;
+        width: 50px;
+        height: 50px;
         border-radius: 50%; 
-        display: flex;
-        text-align: center;
         color: white;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
         font-size: 16px;
         margin: 0 auto 40px;
-        color: var(--ddd--theme-default-navy60);
+   background-color: red;
       }
 
       .content {
@@ -67,7 +70,7 @@ export class DddStepsListItems extends DDDSuper(I18NMixin(LitElement)) {
       }
 
       h3 {
-        display: inline-block
+        display: inline-block;
       }
 
       :host([data-primary]) .circle {
@@ -86,4 +89,4 @@ export class DddStepsListItems extends DDDSuper(I18NMixin(LitElement)) {
   }
 }
 
-globalThis.customElements.define(DddStepsListItems.tag, DddStepsList);
+globalThis.customElements.define(DddStepsListItems.tag, DddStepsListItems);
