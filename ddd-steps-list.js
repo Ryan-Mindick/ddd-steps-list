@@ -37,7 +37,7 @@ export class DddStepsList extends DDDSuper(I18NMixin(LitElement)) {
     return [super.styles,
     css`
       :host {
-        display: block;
+        display: inline-flex
       }
     `];
   }

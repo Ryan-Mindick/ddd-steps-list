@@ -62,7 +62,7 @@ export class DddStepsListItems extends DDDSuper(I18NMixin(LitElement)) {
         justify-content: center;
         font-size: 16px;
         margin: 0 auto 40px;
-   background-color: red;
+        background-color: var(--ddd-theme-default-navy60)
       }
 
       .content {
